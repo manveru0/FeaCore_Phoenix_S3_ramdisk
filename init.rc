@@ -932,6 +932,13 @@ service drm /system/bin/drmserver
     user drm
     group system inet drmrpc sdcard_rw media_rw radio
 
+     # Run init.d scripts
+service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
+    class main
+    user root
+    group shell
+    oneshot
+    
 service media /system/bin/mediaserver
     class main
     user media
