@@ -108,7 +108,7 @@ service LE_tx_C_mid /system/bin/LE_dut --tx_c_mid
     group bluetooth net_bt_admin
     disabled
     oneshot
-    
+
 service LE_tx_C_max /system/bin/LE_dut --tx_c_max
     class main
     group bluetooth net_bt_admin
@@ -121,7 +121,7 @@ service LE_tx_I_low  /system/bin/LE_dut --tx_i_low
     group bluetooth net_bt_admin
     disabled
     oneshot
-    
+
 service LE_tx_I_max /system/bin/LE_dut --tx_i_max
     class main
     group bluetooth net_bt_admin

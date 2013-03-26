@@ -8,8 +8,9 @@
 /dev/ashmem               0666   root       root
 /dev/binder               0666   root       root
 
-# logger should be world writable (for logging) but not readable
-/dev/log/*                0662   root       log
+# Anyone can read the logs, but if they're not in the "logs"
+# group, then they'll only see log entries for their UID.
+/dev/log/*                0666   root       log
 
 # the msm hw3d client device node is world writable/readable.
 /dev/msm_hw3dc            0666   root       root
@@ -71,7 +72,6 @@
 /dev/mtp_usb              0660   root       mtp
 /dev/usb_accessory        0660   root       usb
 /dev/tun                  0660   system     vpn
-/dev/usb/lp*              0660   system     usb
 
 # CDMA radio interface MUX
 /dev/ts0710mux*           0640   radio      radio

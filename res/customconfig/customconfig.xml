@@ -1,0 +1,561 @@
+<settingsRoot>
+   <settingsTab name="CPU">
+     <settingsPane description="Apply the settings on boot only if the desired settings prove to be stable, else the device ends up in a boot-loop. If turned off, the displayed values do not correspond the current live values but the saved profile values, some inconsistencies may occur on applying." 
+                  name="CPU control switch">
+      <checkbox description="If enabled, the below settings will be applied at boot." 
+                name="Set CPU settings on boot" 
+                action="controlswitch CPU"
+                label="Set on boot"/>
+    </settingsPane>
+    <settingsPane description="Change max/min frequencies" 
+                  name="CPU frequency control">
+		  
+      <spinner description="Set the maximum frequency the CPU scales up to. Default: 1400 MHz." 
+               name="CPU max frequency" 
+               action="cpugeneric /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq">	
+	 
+      <spinnerItem name="200 MHz" value="200000"/>"
+      <spinnerItem name="300 MHz" value="300000"/>"
+      <spinnerItem name="400 MHz" value="400000"/>"
+      <spinnerItem name="500 MHz" value="500000"/>"
+      <spinnerItem name="600 MHz" value="600000"/>"
+      <spinnerItem name="700 MHz" value="700000"/>"
+      <spinnerItem name="800 MHz" value="800000"/>"
+      <spinnerItem name="900 MHz" value="900000"/>"
+      <spinnerItem name="1000 MHz" value="1000000"/>"
+      <spinnerItem name="1100 MHz" value="1100000"/>"
+      <spinnerItem name="1200 MHz" value="1200000"/>"
+      <spinnerItem name="1300 MHz" value="1300000"/>"
+      <spinnerItem name="1400 MHz" value="1400000"/>"
+      <spinnerItem name="1500 MHz" value="1500000"/>"
+      <spinnerItem name="1600 MHz" value="1600000"/>"
+      <spinnerItem name="1704 MHz" value="1704000"/>"
+      
+    </spinner>
+    
+    <spinner description="Set the minimum frequency the CPU scales down to. Default: 200 MHz." 
+               name="CPU min frequency" 
+               action="cpugeneric /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq">
+	       
+    <spinnerItem name="200 MHz" value="200000"/>"
+    <spinnerItem name="300 MHz" value="300000"/>"
+    <spinnerItem name="400 MHz" value="400000"/>"
+    <spinnerItem name="500 MHz" value="500000"/>"
+    <spinnerItem name="600 MHz" value="600000"/>"
+    <spinnerItem name="700 MHz" value="700000"/>"
+    <spinnerItem name="800 MHz" value="800000"/>"
+    <spinnerItem name="900 MHz" value="900000"/>"
+    <spinnerItem name="1000 MHz" value="1000000"/>"
+    <spinnerItem name="1100 MHz" value="1100000"/>"
+    <spinnerItem name="1200 MHz" value="1200000"/>"
+    <spinnerItem name="1300 MHz" value="1300000"/>"
+    <spinnerItem name="1400 MHz" value="1400000"/>"
+    <spinnerItem name="1500 MHz" value="1500000"/>"
+    <spinnerItem name="1600 MHz" value="1600000"/>"
+    <spinnerItem name="1704 MHz" value="1704000"/>"
+	       
+    </spinner>
+	       
+    </settingsPane>
+    
+    <settingsPane description="PegasusQ is the default governor for daily running. Adaptive is based on ondemand and developed by Sammy."
+                  name="CPU governor">
+		  
+      <spinner description="Set active governor. Default: PegasusQ" 
+               name="Current governor" 
+               action="generic /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor">
+	       
+      <spinnerItem name="PegasusQ" value="pegasusq"/>
+      <spinnerItem name="Adaptive" value="adaptive"/>
+      <spinnerItem name="Ondemand" value="ondemand"/>
+	       
+      </spinner>
+      
+    </settingsPane>
+    
+    <settingsPane description="Decreasing voltage will lower power consumption of the CPU. Increasing it on overclocked frequencies improves stability."
+                  name="CPU voltage control">
+		  
+      <seekBar  description="Default voltage: 850000 µV" 
+	        name="200 MHz step" 
+                action="cpuvolt 200"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 875000 µV" 
+	        name="300 MHz step" 
+                action="cpuvolt 300"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 900000 µV" 
+	        name="400 MHz step" 
+                action="cpuvolt 400"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 900000 µV" 
+	        name="500 MHz step" 
+                action="cpuvolt 500"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 912500 µV" 
+	        name="600 MHz step" 
+                action="cpuvolt 600"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 925000 µV" 
+	        name="700 MHz step" 
+                action="cpuvolt 700"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 950000 µV" 
+	        name="800 MHz step" 
+                action="cpuvolt 800"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1000000 µV" 
+	        name="900 MHz step" 
+                action="cpuvolt 900"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1050000 µV" 
+	        name="1000 MHz step" 
+                action="cpuvolt 1000"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1100000 µV" 
+	        name="1100 MHz step" 
+                action="cpuvolt 1100"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1150000 µV" 
+	        name="1200 MHz step" 
+                action="cpuvolt 1200"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1200000 µV" 
+	        name="1300 MHz step" 
+                action="cpuvolt 1300"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1250000 µV" 
+	        name="1400 MHz step" 
+                action="cpuvolt 1400"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1275000 µV" 
+	        name="1500 MHz step" 
+                action="cpuvolt 1500"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1300000 µV" 
+	        name="1600 MHz step" 
+                action="cpuvolt 1600"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+      <seekBar  description="Default voltage: 1325000 µV" 
+	        name="1704 MHz step" 
+                action="cpuvolt 1704"
+                unit=" µV" min="600000" reversed="false" step="12500" max="1375000"/>
+		  
+    </settingsPane>
+  </settingsTab>
+  
+    <settingsTab name="I/O">
+     
+    <settingsPane description="Change the I/O Scheduler. Default is the ROW Scheduler."
+                  name="I/O schedulers">
+		  
+      <spinner name="Current internal storage scheduler"
+               action="iosched internal /sys/block/mmcblk0/queue/scheduler">
+	      
+      <spinnerItem name="NOOP" value="noop"/>"
+      <spinnerItem name="Deadline" value="deadline"/>"
+      <spinnerItem name="ROW" value="row"/>"
+      <spinnerItem name="CFQ" value="cfq"/>"
+      <spinnerItem name="BFQ" value="bfq"/>"
+      <spinnerItem name="SIO" value="sio"/>"
+           
+      </spinner>
+      
+      <spinner name="Current external storage scheduler"
+               action="iosched sd /sys/block/mmcblk3/queue/scheduler">
+	      
+      <spinnerItem name="NOOP" value="noop"/>"
+      <spinnerItem name="Deadline" value="deadline"/>"
+      <spinnerItem name="ROW" value="row"/>"
+      <spinnerItem name="CFQ" value="cfq"/>"
+      <spinnerItem name="BFQ" value="bfq"/>"
+      <spinnerItem name="SIO" value="sio"/>"
+           
+      </spinner>
+		  
+    </settingsPane>
+    
+    <settingsPane description="The readahead value is the requested block size the host controller reads into memory on any given I/O read request."
+		  name="I/O read-ahead">
+      
+
+      <seekBar  description="The read-ahead value on the internal phone memory." 
+                name="Internal storage read-ahead" 
+                action="generictag internal /sys/block/mmcblk0/queue/read_ahead_kb"
+                unit="kB" min="128" reversed="false" step="128" max="2048"/>
+
+      <seekBar  description="The read-ahead value on the external SD card." 
+                name="SD card read-ahead" 
+                action="generictag sd /sys/block/mmcblk3/queue/read_ahead_kb"
+                unit="kB" min="128" reversed="false" step="128" max="2048"/>
+
+    </settingsPane>
+    
+   </settingsTab>
+   
+   <settingsTab name="Screen">
+    <settingsPane description=""
+		  name="Front Buffer">
+
+      <seekBar  description="Adds a delay to early-suspend to continue drawing for x amount of milliseconds."
+		name="Front buffer early suspend delay"
+                action="generic /sys/power/fb_delay"
+                unit="ms" min="0" reversed="false" step="25" max="500"/>
+
+    </settingsPane>
+
+    <settingsPane description="mobile Digital Natural Image engine control. Samsungs hardware image post-processor controls virtually any image manipulation. All control master switches, if left as delta controls, will negate the sequence setting if checked. Master sequence has SCR and CS enabled by default."
+		  name="Global controls">
+
+      <checkbox  description="Register intercept acts like a hook and will enable catching scenario settings and modifying them through delta controls. If a scenario does not have a setting (register) in its base sequence, then it cannot be modified by the hook."
+                name="Register intercept" 
+                action="generic01 /sys/class/misc/mdnie/hook_intercept"
+                label="Enable register hook"/>
+
+      <checkbox  description="Enabling the master sequence will disable and ignore Samsungs profiles and scenarios, the ROM controls will be disabled."
+                name="Master sequence" 
+                action="generic01 /sys/class/misc/mdnie/sequence_intercept"
+                label="Enable master sequence"/>
+
+    </settingsPane>
+
+    <settingsPane description=""
+		  name="Digital noise reduction control">
+
+      <checkbox  description="" 
+                name="Digital noise reduction video master switch" 
+                action="maskvalue 14 /sys/class/misc/mdnie/hook_control/s_digital_noise_reduction"
+                label="Toggle digital noise reduction for video playback"/>
+
+      <checkbox  description="" 
+                name="Digital noise reduction camera master switch" 
+                action="maskvalue 16 /sys/class/misc/mdnie/hook_control/s_digital_noise_reduction"
+                label="Toggle digital noise reduction for camera"/>
+
+      <checkbox  description="" 
+                name="Factory settings digital noise reduction" 
+                action="generic01-offset B /sys/class/misc/mdnie/hook_control/s_factory_digital_noise_reduction"
+                label="Toggle factory settings"/>
+
+    </settingsPane>
+
+    <settingsPane description=""
+		  name="High dynamic range control">
+
+      <checkbox  description="" 
+                name="High dynamic range video master switch" 
+                action="maskvalue 14 /sys/class/misc/mdnie/hook_control/s_high_dynamic_range"
+                label="Toggle HDR for video playback"/>
+
+      <checkbox  description="" 
+                name="High dynamic range camera master switch" 
+                action="maskvalue 16 /sys/class/misc/mdnie/hook_control/s_high_dynamic_range"
+                label="Toggle HDR for camera"/>
+
+      <checkbox  description="" 
+                name="Factory settings for HDR" 
+                action="generic01-offset B /sys/class/misc/mdnie/hook_control/s_factory_high_dynamic_range"
+                label="Toggle factory settings"/>
+
+    </settingsPane>
+
+    <settingsPane description=""
+		  name="Digital edge enhancement control">
+
+      <checkbox  description="" 
+                name="Digital edge enhancement UI master switch" 
+                action="maskvalue 1 /sys/class/misc/mdnie/hook_control/s_edge_enhancement"
+                label="Toggle edge enhancement for user interface"/>
+
+      <checkbox  description="" 
+                name="Digital edge enhancement video master switch" 
+                action="maskvalue 14 /sys/class/misc/mdnie/hook_control/s_edge_enhancement"
+                label="Toggle edge enhancement for video playback"/>
+
+      <checkbox  description="" 
+                name="Digital edge enhancement camera master switch" 
+                action="maskvalue 16 /sys/class/misc/mdnie/hook_control/s_edge_enhancement"
+                label="Toggle edge enhancement for camera"/>
+
+      <checkbox  description="" 
+                name="Digital edge enhancement gallery master switch" 
+                action="maskvalue 64 /sys/class/misc/mdnie/hook_control/s_edge_enhancement"
+                label="Toggle edge enhancement for stock gallery"/>
+
+      <checkbox  description="Factory settings override the controls." 
+                name="Digital edge enhancement factory settings" 
+                action="generic01-offset B /sys/class/misc/mdnie/hook_control/s_factory_edge_enhancement"
+                label="Toggle factory settings"/>
+
+      <seekBar  description=""
+		name="Amount"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/de_positive_e"
+                unit="" min="-128" reversed="false" step="1" max="128"/>
+
+      <seekBar  description=""
+		name="Radius"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/de_positive_f"
+                unit="" min="-128" reversed="false" step="1" max="128"/>
+
+      <seekBar  description=""
+		name="Threshold"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/de_positive_f"
+                unit="" min="-128" reversed="false" step="1" max="128"/>
+
+      <seekBar  description=""
+		name="Minimum ratio"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/de_min_ratio"
+                unit="" min="-256" reversed="false" step="16" max="2048"/>
+
+      <seekBar  description=""
+		name="Maximum ratio"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/de_max_ratio"
+                unit="" min="-3840" reversed="false" step="16" max="1024"/>
+
+    </settingsPane>
+
+    <settingsPane description="Chroma saturation works in the HSL colour space, modifying saturation will dilute the hue with white or darken with black. Variations in chroma are achieved by adding different amounts of a neutral gray of the same value as the color you want to alter."
+		  name="Chroma saturation control">
+
+      <checkbox  description="" 
+                name="Chroma saturation master switch" 
+                action="generic01 /sys/class/misc/mdnie/hook_control/s_chroma_saturation"
+                label="Toggle chroma saturation"/>
+
+      <checkbox  description="Factory settings override the controls." 
+                name="Chroma saturation factory settings" 
+                action="generic01 /sys/class/misc/mdnie/hook_control/s_factory_chroma_saturation"
+                label="Toggle factory settings"/>
+
+      <seekBar  description="Saturation weight/multipliers for RGB/YCM chroma gains"
+		name="Chroma saturation weight"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/cs_weight"
+                unit="" min="-16" reversed="false" step="1" max="32"/>
+
+      <seekBar  description=""
+		name="Red gain"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/cs_red"
+                unit="" min="-16" reversed="false" step="1" max="32"/>
+
+      <seekBar  description=""
+		name="Green gain"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/cs_green"
+                unit="" min="-16" reversed="false" step="1" max="32"/>
+
+      <seekBar  description=""
+		name="Blue gain"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/cs_blue"
+                unit="" min="-16" reversed="false" step="1" max="32"/>
+
+      <seekBar  description=""
+		name="Yellow gain"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/cs_yellow"
+                unit="" min="-16" reversed="false" step="1" max="32"/>
+
+      <seekBar  description=""
+		name="Cyan gain"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/cs_cyan"
+                unit="" min="-16" reversed="false" step="1" max="32"/>
+
+      <seekBar  description=""
+		name="Magenta gain"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/cs_magenta"
+                unit="" min="-16" reversed="false" step="1" max="32"/>
+
+    </settingsPane>
+
+    <settingsPane description="Changes white colour temperature"
+		  name="White colour temperature control">
+
+      <checkbox  description="" 
+                name="Colour temperature master switch" 
+                action="generic01 /sys/class/misc/mdnie/hook_control/s_MCM"
+                label="Toggle colour temperature control"/>
+
+      <seekBar  description="Starting point is 6500K."
+		name="Colour temperature"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/mcm_temperature"
+                unit="00K" min="-20" reversed="false" step="1" max="20"/>
+
+    </settingsPane>
+
+    <settingsPane description="The controls is divided in 8 channels, RGB, YCM, W and K. SCR controls are RGB modifiers on each of the controls altering the primary luminosities on that channel."
+		  name="SCR colour channel modifications">
+
+      <checkbox  description="Enables/disables all the below channel modifiers" 
+                name="SCR master switch" 
+                action="generic01 /sys/class/misc/mdnie/hook_control/s_channel_filters"
+                label="Toggle SCR"/>
+
+    </settingsPane>
+
+    <settingsPane description=""
+		  name="White colour balance">
+
+      <seekBar  description="Red in white"
+		name="Red"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_white_red"
+                unit="" min="-128" reversed="false" step="1" max="20"/>
+
+      <seekBar  description="Green in white"
+		name="Green"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_white_green"
+                unit="" min="-128" reversed="false" step="1" max="20"/>
+
+      <seekBar  description="Blue in white"
+		name="Blue"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_white_blue"
+                unit="" min="-128" reversed="false" step="1" max="20"/>
+
+    </settingsPane>
+
+    <settingsPane description=""
+		  name="Primary (RGB) colour channels addends">
+
+      <seekBar  description="Red in red channel"
+		name="Red in red"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_red_red"
+                unit="" min="-64" reversed="false" step="1" max="32"/>
+
+      <seekBar  description="Green in red channel"
+		name="Green in red"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_red_green"
+                unit="" min="-32" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Blue in red channel"
+		name="Blue in red"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_red_blue"
+                unit="" min="-32" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Red in green channel"
+		name="Red in green"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_green_red"
+                unit="" min="-32" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Green in green channel"
+		name="Green in green"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_green_green"
+                unit="" min="-64" reversed="false" step="1" max="32"/>
+
+      <seekBar  description="Blue in green channel"
+		name="Blue in green"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_green_blue"
+                unit="" min="-32" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Red in blue channel"
+		name="Red in blue"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_blue_red"
+                unit="" min="-32" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Green in blue channel"
+		name="Green in blue"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_blue_green"
+                unit="" min="-32" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Blue in blue channel"
+		name="Blue in blue"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_blue_blue"
+                unit="" min="-64" reversed="false" step="1" max="32"/>
+
+    </settingsPane>
+
+    <settingsPane description=""
+		  name="Secondary (YCM) colour channels addends">
+
+      <seekBar  description="Red in yellow channel"
+		name="Red in yellow"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_yellow_red"
+                unit="" min="-64" reversed="false" step="1" max="16"/>
+
+      <seekBar  description="Green in yellow channel"
+		name="Green in yellow"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_yellow_green"
+                unit="" min="-64" reversed="false" step="1" max="16"/>
+
+      <seekBar  description="Blue in yellow channel"
+		name="Blue in yellow"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_yellow_blue"
+                unit="" min="-16" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Red in cyan channel"
+		name="Red in cyan"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_cyan_red"
+                unit="" min="-16" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Green in cyan channel"
+		name="Green in cyan"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_cyan_green"
+                unit="" min="-64" reversed="false" step="1" max="16"/>
+
+      <seekBar  description="Blue in cyan channel"
+		name="Blue in cyan"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_cyan_blue"
+                unit="" min="-64" reversed="false" step="1" max="16"/>
+
+      <seekBar  description="Red in magenta channel"
+		name="Red in magenta"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_magenta_red"
+                unit="" min="-64" reversed="false" step="1" max="16"/>
+
+      <seekBar  description="Green in magenta channel"
+		name="Green in magenta"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_magenta_green"
+                unit="" min="-16" reversed="false" step="1" max="64"/>
+
+      <seekBar  description="Blue in magenta channel"
+		name="Blue in magenta"
+                action="generic-offset B /sys/class/misc/mdnie/hook_control/scr_magenta_blue"
+                unit="" min="-64" reversed="false" step="1" max="16"/>
+
+    </settingsPane>
+  </settingsTab>
+  
+  <settingsTab name="Boeffla Sound">
+    <settingsPane description="Turn Boeffla sound on/off" 
+                  name="Master Switch">
+		  
+      <checkbox description="If enabled, all chosen Boeffla sound options will be active" 
+                name="Enable Boeffla sound" 
+		action="generic01 /sys/class/misc/boeffla_sound/boeffla_sound"
+		label="Enable Boeffla sound"/>
+    
+    </settingsPane>
+    
+    <settingsPane description="DAC and FLL optimizations" 
+                  name="DAC Tune">
+		  
+      <checkbox description="Bypass analog channels and redirect sound directly to output." 
+                name="DAC Direct" 
+		action="generic01 /sys/class/misc/boeffla_sound/dac_direct"
+		label="Enable DAC Direct"/>
+		
+      <checkbox description="Increases dac oversample rate to a 48 khz rate and produce better outpund sound." 
+                name="DAC 128 bit oversampling" 
+		action="generic01 /sys/class/misc/boeffla_sound/dac_oversampling"
+		label="Enable DAC 128 bit oversampling"/>
+		
+      <checkbox description="Internal clock optimization to reduce noise." 
+                name="FLL clock tuning" 
+		action="generic01 /sys/class/misc/boeffla_sound/fll_tuning"
+		label="Enable FLL clock tuning"/>
+		  
+		  
+    </settingsPane>
+    
+    <settingsPane description="Several options to improve sound quality" 
+                  name="Advanced Tuning">
+		  
+      <checkbox description="Tune up the phone speaker." 
+                name="Speaker Tuning" 
+		action="generic01 /sys/class/misc/boeffla_sound/speaker_tuning"
+		label="Enable speaker tuning"/>
+		
+      <checkbox description="Convert stereo into mono sound." 
+                name="Mono Downmix" 
+		action="generic01 /sys/class/misc/boeffla_sound/mono_downmix"
+		label="Enable Mono Downmix"/>	  
+		  
+    </settingsPane>
+    	
+  </settingsTab>
+</settingsRoot>
