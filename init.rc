@@ -17,8 +17,6 @@ on early-init
 
 # create mountpoints
     mkdir /mnt 0775 root system
-
-
     
 on init
 
@@ -132,6 +130,8 @@ on fs
 on post-fs
     # once everything is setup, no need to modify /
     mount rootfs rootfs / ro remount
+    
+    exec /system/bin/luksunlock
 
     # We chown/chmod /cache again so because mount is run as root + defaults
     chown system cache /cache
